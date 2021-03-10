@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><!--<layout> — этим тегом мы обрамляем корневой элемент и тем самым даем понять компилятору, что файл разметки относится к биндингу. Стоит также отметить, что он всегда должен находиться в корне.-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--<data> — тег, который лежит внутри layout и служит оберткой для переменных, используемых в разметке.-->
+    <data>
+        <!--<variable> — содержит в себе name и type, в которых описывается название переменной и ее полное имя соответственно (включая название пакета)-->
+        <!--Этот блок разметки определяет свойство viewModel для класса привязки(ListItemSoundBinding) вместе с геттером и сеттером. В классе привязки(ListItemSoundBinding) свойство viewModel может использоваться в выражениях привязки-->
+        <variable
+            name="viewModel"
+            type="com.alexeyyuditsky.beatbox.SoundViewModel" />
+    </data>
+
+    <!-- @{} — контейнер, в котором описывается выражение. К примеру, форматирование имени и фамилии в одну строку или простое отображение поля.-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="@{() -> viewModel.onButtonClicked()}"
+            android:text="@{viewModel.title}"
+            tools:text="Sound name" />
+    </FrameLayout>
+
+</layout>
