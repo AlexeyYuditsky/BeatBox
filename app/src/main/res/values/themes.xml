@@ -10,10 +10,12 @@
     </style>
 
 
-    <style name="BeatBoxButton" parent="Base.Widget.AppCompat.Button">
+    <style name="BeatBoxButton" parent="Base.V7.Theme.AppCompat">
         <item name="android:background">@drawable/button_beat_box</item>
-        <item name="android:textSize">12sp</item>
-
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
     </style>
 
 </resources>
